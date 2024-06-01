@@ -117,7 +117,82 @@ const navTogglerBtn = document.querySelector(".nav-toggler"),
     }
 
 
+    // alert
+
+    let notifications = document.querySelector('.notifications');
+    let success = document.getElementById('success');
+
+
 
 
     
-   
+//    message
+
+function createToast(type, icon , title , text){
+    let newToast = document.createElement('div');
+    newToast.innerHTML = ` 
+     <div class="toast ${type}">
+        <i class="${icon}"></i>
+    <div class="content">
+    <div class="title">${title}</div>
+        <span>${text}</span>
+    </div>
+    <i class="fa-solid fa-xmark onclick="(this.parentElement).remove()"></i>
+</div>`;
+
+    notifications.appendChild(newToast);
+
+    // Remove the toast after 5 seconds
+    setTimeout(() => {
+        newToast.remove();
+    }, 5000);
+}
+
+
+function SendMail(){
+
+    var params = {
+        from_name : document.getElementById("fullname").value,
+        email_id : document.getElementById("email_id").value,
+        subject : document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+    }
+
+    let type = 'success';
+    let icon = 'fa-solid fa-circle-check';
+    let title = 'Message Sent!';
+    let text = 'Your Messaage to kashthrob has been sent successfully!';
+    createToast(type,icon,title,text);
+
+
+    emailjs.send("service_ev4f4qt", "template_p6vohdq", params).then(function (res){
+
+        // Sweet Alert
+
+        
+        // Swal.fire({
+        //     icon: "success",
+        //     title: "Message Sent!",
+        //     text: "Thank You, I will get back to you soon",
+        //     showClass: {
+        //       popup: `
+        //         animate__animated
+        //         animate__fadeInUp
+        //         animate__faster
+        //       `
+        //     },
+        //     hideClass: {
+        //       popup: `
+        //         animate__animated
+        //         animate__fadeOutDown
+        //         animate__faster
+        //       `
+        //     }
+        //   });
+
+            })
+}
+
+
+
+
