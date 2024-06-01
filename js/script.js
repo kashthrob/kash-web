@@ -161,7 +161,7 @@ function SendMail(){
     let type = 'success';
     let icon = 'fa-solid fa-circle-check';
     let title = 'Message Sent!';
-    let text = 'Your Messaage to kashthrob has been sent successfully!';
+    let text = 'Your Message to kashthrob has been sent successfully!';
     createToast(type,icon,title,text);
 
 
@@ -169,7 +169,7 @@ function SendMail(){
 
         // Sweet Alert
 
-        
+
         // Swal.fire({
         //     icon: "success",
         //     title: "Message Sent!",
