@@ -62,7 +62,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
-                            <h3 class="hello"><span class="greet">Hello</span>, my name is <span class="name">Elvis Aniche Chinedu</span></h3>
+                            <h3 class="hello"><span class="greet">Hello</span>, my name is <span class="name">Elvis Chinedu Aniche</span></h3>
                             <h3 class="my-profession">I'm a <span class="typing">Web Developer</span></h3>
                             <p>Welcome to my portfolio!, a web developer/designer passionate about creating engaging digital experiences. Explore my work and let's collaborate on something amazing!
                             </p>
@@ -347,6 +347,8 @@
                     </div>
                 </div>
 
+            <div class="notifications"></div>
+
                 <h3 class="contact-title padd-15">Have You Any Questions ?</h3>
                 <h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
 
@@ -400,18 +402,18 @@
                 <!-- Contact form -->
                 <div class="row">
 
-                <div class="contact-form padd-15">
+                <div class="contact-form padd-15" >
                     <div class="row">
 
                         <div class="form-item col-6 padd-15">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" name="to_name" id="fullname" class="form-control" placeholder="Full Name">
                             </div>
                         </div>
 
                         <div class="form-item col-6 padd-15">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email"  name="email_id" id="email_id" class="form-control" placeholder="Email Id">
                             </div>
                         </div>
 
@@ -421,7 +423,7 @@
                     <div class="row">
                         <div class="form-item col-12 padd-15">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                             </div>
                         </div>
                     </div>
@@ -429,7 +431,7 @@
                     <div class="row">
                         <div class="form-item col-12 padd-15">
                             <div class="form-group">
-                                <textarea  class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+                                <textarea  class="form-control" cols="30" rows="10" name="message" id="message" placeholder="Message"></textarea>
                             </div>
                         </div>
                     </div>
@@ -437,7 +439,7 @@
                     <div class="row">
                         <div class="form-item col-12 padd-15">
                             <div class="form-group">
-                                <button type="submit" class="btn"> Send Message</button>
+                                <button  type="submit" id="button" value="Send Email" onclick="SendMail()" class="btn"> Send Message</button>
                             </div>
                         </div>
                     </div>
@@ -493,5 +495,17 @@
     <!-- JS Files -->
     <script src="js/script.js"></script>
     <script src="./js/style-switcher.js"></script>
+
+    <!-- message -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('1abRm04vPLz5LiVxx')
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </body>
 </html>
