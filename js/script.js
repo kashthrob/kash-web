@@ -190,6 +190,12 @@ function SendMail(){
         //     }
         //   });
 
+                // Reset the input fields after successful send
+    document.getElementById("fullname").value = "";
+    document.getElementById("email_id").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+
             })
 }
 
